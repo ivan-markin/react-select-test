@@ -62,7 +62,7 @@ export default function Select({ items }: SelectProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.ul
-            className={style.selectDropdown}
+            className={style.dropdown}
             variants={variants}
             initial={"initial"}
             animate={"animate"}
