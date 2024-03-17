@@ -1,5 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import { useEffect, useRef, useState } from "react";
 import style from "./Select.module.scss";
 import { SelectProps } from "./Select.props";
@@ -25,6 +23,7 @@ export default function Select({ items }: SelectProps) {
 
   useEffect(() => {
     const closeByClickOutside = (e: MouseEvent) => {
+      e.stopPropagation();
       if (dropdownRef.current !== null) {
         const el = dropdownRef.current as Element;
         if (!el.contains(e.target as Element) && isOpen) {
